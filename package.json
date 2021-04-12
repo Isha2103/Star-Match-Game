@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "concurrently  \"npm run dev-bundle\"",
-    "build": "npm run dev-server && npm run dev-bundle",
+    "start": "concurrently \"npm run dev-server\" \"npm run dev-bundle\"",
+    "build": "concurrently \"npm run dev-server\" \"npm run dev-bundle\"",
     "test": "jest",
     "dev-server": "cross-env NODE_PATH=./src nodemon --exec \"babel-node src/server/server.js\" --ignore public/",
     "dev-bundle": "webpack -wd"
